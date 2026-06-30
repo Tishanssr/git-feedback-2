@@ -68,3 +68,40 @@ jobs:
 
 
 
+<!--  Upload build artifacts -->
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: next-build
+          path: .next
+          include-hidden-files: true
+          retention-days: 1 
+
+
+<!-- Test -->
+  # test:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v6
+
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v6
+  #       with:
+  #         node-version: '22'
+  #         cache: 'npm'
+
+  #     - name: Install dependencies
+  #       run: npm ci
+
+  #     - name: Download build artifact
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: next-build
+  #         path: .next
+
+  #     - name: Run unit tests
+  #       run: npm run test
+  #       env:
+  #         ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
