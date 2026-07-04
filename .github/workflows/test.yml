@@ -1,0 +1,12 @@
+name: Ex2
+
+on:
+  push:
+    branches [main]
+
+job:
+  Example:
+    runs-on: ubuntu latest
+    steps:
+      name : Print
+      run : echo "hello world"
