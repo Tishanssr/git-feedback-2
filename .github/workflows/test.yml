@@ -8,5 +8,5 @@ job:
   Example:
     runs-on: ubuntu latest
     steps:
-      name : Print
-      run : echo "hello world"
+      - name : Print
+        run : echo "hello world"
